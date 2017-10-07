@@ -48,9 +48,26 @@ public class Parentizacion{
 
 		for (i = 0; i < arrOfDim.length; ++i) {
 
-			dimFinal[i] = parseInt(arrOfDim[i]);0
+			dimFinal[i] = parseInt(arrOfDim[i]);
 			
 		}
+
+		int n = arrOfDim.length;
+		int[][] m = new int[n][n];
+		int[][] s = new int[n][n];
+
+		for (int j = 0; j < n; ++j) {
+			for (int k = 0; k < n; ++k) {
+
+				m[j][k] = 0;
+				s[j][k] = 0;
+				
+			}	
+		}
+
+		int ans = multiplicacionCadenaMatrices(dimFinal,m,s);
+
+		System.out.println(ans);
 
 	}
 }

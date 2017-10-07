@@ -38,17 +38,17 @@ public class Parentizacion{
 	}
 
 	public static void main(String[] args) {
-		Scanner m = new Scanner(System.in);
+		Scanner d = new Scanner(System.in);
 
-		String dimensiones = m.nextLine();
+		String dimensiones = d.nextLine();
 
 		String[] arrOfDim = dimensiones.split(" "); 
 
 		int[] dimFinal = new int[arrOfDim.length];
 
-		for (i = 0; i < arrOfDim.length; ++i) {
+		for (int i = 0; i < arrOfDim.length; ++i) {
 
-			dimFinal[i] = parseInt(arrOfDim[i]);
+			dimFinal[i] = Integer.parseInt(arrOfDim[i]);
 			
 		}
 

@@ -29,7 +29,8 @@ public class Parentizacion{
 					if (q < m[i][j])
 					{
 						m[i][j] = q; // cantidad minima de multiplicaciones se actualiza dada la posicion k
-						s[i][j] = "(" + s[i][k] + s[k+1][j] + ")"; // se guarda la posicion k como la primera posicion de parentizacion optima
+						// en esta posicion de la matriz s se va guardando la solucion optima
+						s[i][j] = "(" + s[i][k] + s[k+1][j] + ")";
 					} 
 				}
 			}

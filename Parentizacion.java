@@ -4,7 +4,7 @@ import java.lang.*;
 
 public class Parentizacion{
 
-	public static int multiplicacionCadenaMatrices(int[] p, int[][] m, int[][] s)
+	public static String multiplicacionCadenaMatrices(int[] p, int[][] m, String[][] s)
 	{
 		// Matriz Ai tiene dimensiones p[i-1] x p[i] para i = 1..n
 		// El primer indice para p es 0 y el primer indice para m y s es 1
@@ -29,12 +29,12 @@ public class Parentizacion{
 					if (q < m[i][j])
 					{
 						m[i][j] = q; // cantidad minima de multiplicaciones se actualiza dada la posicion k
-						s[i][j] = k; // se guarda la posicion k como la primera posicion de parentizacion optima
+						s[i][j] = "(" + s[i][k] + s[k+1][j] + ")"; // se guarda la posicion k como la primera posicion de parentizacion optima
 					} 
 				}
 			}
 		}
-		return m[1][n];
+		return s[1][n];
 	}
 
 	public static void main(String[] args) {
@@ -54,18 +54,21 @@ public class Parentizacion{
 
 		int n = arrOfDim.length;
 		int[][] m = new int[n][n];
-		int[][] s = new int[n][n];
+		String[][] s = new String[n][n];
 
 		for (int j = 0; j < n; ++j) {
 			for (int k = 0; k < n; ++k) {
 
 				m[j][k] = 0;
-				s[j][k] = 0;
 				
 			}	
 		}
+		for(int l = 0; l < n; ++l){
+		    
+		    s[l][l] = ".";
+		}
 
-		int ans = multiplicacionCadenaMatrices(dimFinal,m,s);
+		String ans = multiplicacionCadenaMatrices(dimFinal,m,s);
 
 		System.out.println(ans);
 
